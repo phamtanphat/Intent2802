@@ -17,5 +17,9 @@ public class Manhinh2Activity extends AppCompatActivity {
 //        Intent intent = getIntent();
 //        String chuoi1 = intent.getStringExtra("chuoi2");
 //        Toast.makeText(this, chuoi1, Toast.LENGTH_SHORT).show();
+        //1 : Kiểu số
+//        Intent intent = getIntent();
+//        Integer so = intent.getIntExtra("so1", -1);
+//        Toast.makeText(this, so + " ", Toast.LENGTH_SHORT).show();
     }
 }
