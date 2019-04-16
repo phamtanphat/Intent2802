@@ -30,26 +30,35 @@ public class MainActivity extends AppCompatActivity {
         btnIntentInteger.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
-                intent.putExtra("so",10);
-                startActivity(intent);
+                chuyenmanhinh("so",10);
+//                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
+//                intent.putExtra("so",10);
+//                startActivity(intent);
             }
         });
         btnIntentArray.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int[] mangso = {1,2,3,4,5,6,7,8};
-                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
-                intent.putExtra("mangarray",mangso);
-                startActivity(intent);
+//                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
+//                intent.putExtra("mangarray",mangso);
+//                startActivity(intent);
+                chuyenmanhinh("mangarray",mangso);
             }
         });
+        //arraylistString
+        //object
+        //arrayobject
     }
     private <T > void chuyenmanhinh(String tukhoa ,T value  ){
         Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
         if (value instanceof String){
 //            typecasting
             intent.putExtra(tukhoa , (String) value);
+        }else if (value instanceof Integer){
+            intent.putExtra(tukhoa , (Integer) value);
+        }else if (value instanceof int[]){
+            intent.putExtra(tukhoa , (int[]) value);
         }
         startActivity(intent);
     }
