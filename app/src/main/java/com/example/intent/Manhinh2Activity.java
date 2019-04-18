@@ -28,8 +28,12 @@ public class Manhinh2Activity extends AppCompatActivity {
 //        int[] mangso = intent.getIntArrayExtra("mangarray");
 //        Toast.makeText(this, mangso.length + " ", Toast.LENGTH_SHORT).show();
         //4 : Kiểu Arraylist
+//        Intent intent = getIntent();
+//        ArrayList<String> mangten = intent.getStringArrayListExtra("arraylist");
+//        Log.d("BBB",mangten.size() + "");
+        //5 : Kiểu object
         Intent intent = getIntent();
-        ArrayList<String> mangten = intent.getStringArrayListExtra("arraylist");
-        Log.d("BBB",mangten.size() + "");
+        Person person = (Person) intent.getSerializableExtra("object");
+        Log.d("BBB",person.getTen());
     }
 }
