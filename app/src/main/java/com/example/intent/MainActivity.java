@@ -55,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ArrayList<String> mangten = new ArrayList<>(Arrays.asList("Teo","Ti","Tun"));
-                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
-                intent.putExtra("arraylist",mangten);
-                startActivity(intent);
+                chuyenmanhinh("arraylist",mangten);
             }
         });
         //arraylistString
@@ -73,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra(tukhoa , (Integer) value);
         }else if (value instanceof int[]){
             intent.putExtra(tukhoa , (int[]) value);
+        }else if(value instanceof  ArrayList<?>){
+            if(value instanceof Object){
+                intent.putExtra(tukhoa ,(ArrayList<String>) value);
+            }
         }
         startActivity(intent);
     }
