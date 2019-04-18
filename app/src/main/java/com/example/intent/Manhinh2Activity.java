@@ -32,8 +32,12 @@ public class Manhinh2Activity extends AppCompatActivity {
 //        ArrayList<String> mangten = intent.getStringArrayListExtra("arraylist");
 //        Log.d("BBB",mangten.size() + "");
         //5 : Kiểu object
+//        Intent intent = getIntent();
+//        Person person = (Person) intent.getSerializableExtra("object");
+//        Log.d("BBB",person.getTen());
+        //6 : Kiểu mảng object
         Intent intent = getIntent();
-        Person person = (Person) intent.getSerializableExtra("object");
-        Log.d("BBB",person.getTen());
+        ArrayList<Animal> manganimal =  intent.getParcelableArrayListExtra("mangobject");
+        Log.d("BBB",manganimal.get(0).getTen());
     }
 }

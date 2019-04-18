@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnIntentString,btnIntentInteger,btnIntentArray,btnArrayList,btnObject;
+    Button btnIntentString,btnIntentInteger,btnIntentArray,btnArrayList,btnObject,btnArraylistObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnIntentArray = findViewById(R.id.buttonArray);
         btnArrayList = findViewById(R.id.buttonArrayList);
         btnObject = findViewById(R.id.buttonObject);
+        btnArraylistObject = findViewById(R.id.buttonArraylistobject);
 
         btnIntentString.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,8 +66,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Person person = new Person("Teo","20");
                 Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
-                intent.putExtra("object", (Serializable) person);
+                intent.putExtra("object",  person);
                 startActivity(intent);
+            }
+        });
+        btnArraylistObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Animal> mangthucung = new ArrayList<>();
+                mangthucung.add(new Animal("Meo","5"));
+                mangthucung.add(new Animal("Ca","2"));
+
+                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
+                intent.putExtra("mangobject",  mangthucung);
+                startActivity(intent);
+
             }
         });
         //arraylistString
