@@ -24,5 +24,11 @@
         android:id="@+id/buttonArray"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_below="@id/buttonArray"
+        android:text="Intent ArrayList "
+        android:id="@+id/buttonArrayList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

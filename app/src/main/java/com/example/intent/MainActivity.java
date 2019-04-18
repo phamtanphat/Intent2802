@@ -3,13 +3,17 @@ package com.example.intent;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button btnIntentString,btnIntentInteger,btnIntentArray;
+    Button btnIntentString,btnIntentInteger,btnIntentArray,btnArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnIntentString = findViewById(R.id.buttonString);
         btnIntentInteger = findViewById(R.id.buttonInteger);
         btnIntentArray = findViewById(R.id.buttonArray);
+        btnArrayList = findViewById(R.id.buttonArrayList);
 
         btnIntentString.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
 //                intent.putExtra("mangarray",mangso);
 //                startActivity(intent);
                 chuyenmanhinh("mangarray",mangso);
+            }
+        });
+        btnArrayList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> mangten = new ArrayList<>(Arrays.asList("Teo","Ti","Tun"));
+                Intent intent = new Intent(MainActivity.this,Manhinh2Activity.class);
+                intent.putExtra("arraylist",mangten);
+                startActivity(intent);
             }
         });
         //arraylistString
